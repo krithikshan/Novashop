@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaShop | Modern E-Commerce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#">Nova<span>Shop</span></a>
+
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#products">Shop</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <button class="cart-button" id="cartBtn" aria-label="Open shopping cart">
+        🛒 <span>Cart</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">NEW SEASON • NEW STYLE</div>
+          <h1>Everything you want, <span>all in one place.</span></h1>
+          <p>Discover trending fashion, electronics, footwear, and accessories at prices you'll love.</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">Shop now</a>
+            <a href="#about" class="btn btn-secondary">Learn more</a>
+          </div>
+
+          <div class="stats">
+            <div><strong>10K+</strong><span>Happy customers</span></div>
+            <div><strong>500+</strong><span>Products</span></div>
+            <div><strong>24/7</strong><span>Support</span></div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="floating-badge">Up to 40% OFF</div>
+          <div class="hero-emoji">🛍️</div>
+          <h3>Weekend Sale</h3>
+          <p>Upgrade your style and setup with our top picks.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container feature-grid">
+        <div class="feature"><div>🚚</div><span><strong>Fast Delivery</strong><small>Quick island-wide shipping</small></span></div>
+        <div class="feature"><div>🔒</div><span><strong>Secure Payments</strong><small>Safe checkout experience</small></span></div>
+        <div class="feature"><div>↩️</div><span><strong>Easy Returns</strong><small>Simple return process</small></span></div>
+        <div class="feature"><div>⭐</div><span><strong>Top Quality</strong><small>Carefully selected products</small></span></div>
+      </div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SHOP COLLECTION</p>
+            <h2>Featured products</h2>
+          </div>
+          <p>Find your next favorite item.</p>
+        </div>
+
+        <div class="toolbar">
+          <div class="search-wrap">
+            <span>⌕</span>
+            <input id="searchInput" type="text" placeholder="Search products..." />
+          </div>
+
+          <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Footwear">Footwear</option>
+            <option value="Accessories">Accessories</option>
+          </select>
+
+          <select id="sortSelect">
+            <option value="featured">Sort: Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="rating">Rating</option>
+          </select>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="promo">
+      <div class="container promo-card">
+        <div>
+          <p class="eyebrow">LIMITED OFFER</p>
+          <h2>Get 15% off your first order</h2>
+          <p>Use code <strong>WELCOME15</strong> at checkout.</p>
+        </div>
+        <a href="#products" class="btn btn-light">Start shopping</a>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">ABOUT NOVASHOP</p>
+          <h2>Built for a better online shopping experience.</h2>
+        </div>
+        <p>
+          NovaShop is a modern demo e-commerce storefront designed with a clean interface,
+          responsive layout, product search, category filtering, cart management, and a
+          simple checkout summary.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#">Nova<span>Shop</span></a>
+        <p>Modern shopping made simple.</p>
+      </div>
+      <div>
+        <strong>Shop</strong>
+        <a href="#products">Products</a>
+        <a href="#products">New arrivals</a>
+        <a href="#products">Popular</a>
+      </div>
+      <div>
+        <strong>Help</strong>
+        <a href="#">Contact</a>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+      </div>
+      <div>
+        <strong>Follow</strong>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+    <div class="container copyright">© 2026 NovaShop. Demo storefront.</div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">YOUR BAG</p>
+        <h2>Shopping Cart</h2>
+      </div>
+      <button class="icon-button" id="closeCart">✕</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="coupon">
+        <input id="couponInput" placeholder="Coupon code" />
+        <button id="applyCoupon">Apply</button>
+      </div>
+      <div class="totals">
+        <div><span>Subtotal</span><strong id="subtotal">Rs. 0</strong></div>
+        <div><span>Discount</span><strong id="discount">Rs. 0</strong></div>
+        <div class="total-row"><span>Total</span><strong id="total">Rs. 0</strong></div>
+      </div>
+      <button class="btn btn-primary checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+      <p class="checkout-note">Demo checkout — no real payment is processed.</p>
+    </div>
+  </aside>
+
+  <div class="modal" id="checkoutModal">
+    <div class="modal-card">
+      <button class="icon-button modal-close" id="closeModal">✕</button>
+      <div class="success-icon">✓</div>
+      <h2>Order summary ready!</h2>
+      <p>This demo store does not process real payments, but your cart flow is working correctly.</p>
+      <button class="btn btn-primary" id="continueShopping">Continue shopping</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Added to cart</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
